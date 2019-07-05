@@ -1,0 +1,204 @@
+.container-fluid {
+    overflow: hidden;
+}
+
+.controls {
+    position: relative;
+    bottom: 35px;
+    height: 35px;
+    opacity: 0;
+    transition: opacity 0.1s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: rgba(43, 51, 63, .7);
+}
+
+div.controls:hover {
+    transition: opacity 0.1s;
+    opacity: 1;
+}
+
+div.video:hover+div.controls {
+    transition: opacity 0.1s;
+    opacity: 1;
+}
+
+.controls #vol-control {
+    width: 60px;
+}
+
+.controls .player-btn {
+    color: rgb(222, 222, 222);
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+    font-size: 20px;
+    border: 0;
+    padding: 0;
+    margin-left: 5px;
+}
+
+.controls .player-btn:focus {
+    outline: none;
+}
+
+.controls .control-right {
+    float: right;
+    clear: both;
+}
+
+.controls .time {
+    color: rgb(222, 222, 222);
+    font-size: 12px;
+    margin: 5px 5px 0 0;
+}
+
+.player-btn.disabled {
+    color: rgb(121, 138, 121);
+}
+
+.player, .playlist {
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-top: 10px;
+    user-select: none;
+}
+
+progress[value] {
+    -webkit-appearance: progress-bar;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    height: 5px;
+    background: rgba(115, 133, 159, 0.5);
+    border: none;
+    cursor: pointer;
+}
+
+progress[value]::-webkit-progress-bar {
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+    background: rgba(115, 133, 159, 0.5);
+}
+
+progress[value]::-ms-fill {
+    background-color: rgb(216, 216, 216);
+}
+
+::-webkit-progress-value {
+    background-color: rgb(216, 216, 216);
+}
+
+::-moz-progress-bar {
+    background-color: rgb(216, 216, 216);
+}
+
+article.playlist {
+    margin: 10px 0;
+    padding: .3rem;
+    background-color: #eee;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+.playlist>h1, .playback {
+    margin: .4rem;
+    padding: .3rem;
+    font-size: 1.2rem;
+}
+
+.playback {
+    cursor: pointer;
+    background: left/contain content-box border-box no-repeat white;
+}
+
+.playback.active {
+    background-color: #90d490;
+    cursor: auto;
+}
+
+.playback i {
+    position: relative;
+    top: 13px;
+}
+
+.playback>h2 {
+    display: inline-block;
+    margin: .1rem;
+    font-size: 1rem;
+}
+
+.playback>p {
+    margin: .1rem;
+    font-size: 0.8rem;
+    left: 50px;
+    position: relative;
+}
+
+#like {
+    color: #8fd298;
+    margin-right: 3px;
+}
+
+#unlike {
+    color: #e66464;
+    margin-right: 3px;
+}
+
+#like-num, #unlike-num {
+    display: inline-block;
+    width: 12px;
+    font-size: 15px;
+}
+
+/* firefox specific style goes here */
+
+@supports (-moz-appearance:none) {
+    #vol-control {
+        position: relative;
+        top: 3px;
+    }
+}
+
+/* IE11 CSS hack*/
+
+@media all and (-ms-high-contrast:none) {
+    .controls .player-btn, #vol-control{
+        position: relative;
+        bottom: 5px;
+    }
+
+    #vol-control{
+        bottom: 8px;
+    }
+
+    .controls .control-right .player-btn{
+        bottom: 0px;
+    }
+
+    progress {
+        transition-property: none 
+    }
+}
+
+/* IE10 CSS hack */
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .controls .player-btn, #vol-control{
+        position: relative;
+        bottom: 5px;
+    }
+
+    #vol-control{
+        bottom: 8px;
+    }
+
+    .controls .control-right .player-btn{
+        bottom: 0px;
+    }
+
+    progress {
+        transition-property: none 
+    }
+}

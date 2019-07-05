@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </link>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
+    </link>
+    <link rel="stylesheet" href="css/main.css">
+    </link>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="js/main.js"></script>
+    <script src="js/videoplayer.js"></script>
+    <script src="js/videostore.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 player">
+                <div class="video embed-responsive embed-responsive-16by9">
+                    <video id="video" src="videos/sample-video1.mp4"></video>
+                </div>
+                <div class="controls">
+                    <progress id="progress" value="0" max="100"></progress>
+                    <button id="play" class="player-btn" title="Play">
+                        <i class="fas fa-play-circle"></i>
+                    </button>
+                    <button id="pause" class="player-btn disabled" title="Pause">
+                        <i class="fas fa-pause-circle"></i>
+                    </button>
+                    <button id="stop" class="player-btn disabled" title="Stop">
+                        <i class="fas fa-stop-circle"></i>
+                    </button>
+                    <button id="reload" class="player-btn" title="Reload">
+                        <i class="fas fa-undo-alt"></i>
+                    </button>
+
+                    <button id="minus" class="player-btn" title="Volume down">
+                        <i class="fas fa-minus-circle"></i>
+                    </button>
+                    <input id="vol-control" type="range" min="0" max="100" step="10" value="100"></input>
+                    <button id="plus" class="player-btn" title="Volume up">
+                        <i class="fas fa-plus-circle"></i>
+                    </button>
+                    <button id="mute-toggle" class="player-btn" title="Mute/Unmute">
+                        <i class="fas fa-volume-down"></i>
+                    </button>
+
+                    <span class="control-right">
+                        <button id="like" class="player-btn" title="Like">
+                            <i class="far fa-thumbs-up"></i>
+                            <span id="like-num">0</span>
+                        </button>
+                        <button id="unlike" class="player-btn" title="Unlike">
+                            <i class="far fa-thumbs-down"></i>
+                            <span id="unlike-num">0</span>
+                        </button>
+
+                        <span class="time">
+                            <span id="currentTime" class="currentTime">00:00:00</span> /
+                            <span id="totalTime" class="totalTime">00:00:00</span>
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <article class="playlist">
+                    <h1>Sample Online video playlist</h1>
+                    <article class="playback active" data-videolink="videos/sample-video1.mp4" data-videoid="1">
+                        <i class="fab fa-youtube fa-2x"></i>
+                        <h2>Sample Video 1.</h2>
+                        <p>Duration: 00:00:32</p>
+                    </article>
+                    <article class="playback" data-videolink="videos/sample-video2.mp4" data-videoid="2">
+                        <i class="fab fa-youtube fa-2x"></i>
+                        <h2>Sample Video 2.</h2>
+                        <p>Duration: 00:00:11</p>
+                    </article>
+                    <article class="playback" data-videolink="videos/sample-video3.mp4" data-videoid="3">
+                        <i class="fab fa-youtube fa-2x"></i>
+                        <h2>Sample Video 3.</h2>
+                        <p>Duration: 00:00:21</p>
+                    </article>
+                    <article class="playback" data-videolink="videos/sample-video4.mp4" data-videoid="4">
+                        <i class="fab fa-youtube fa-2x"></i>
+                        <h2>Sample Video 4.</h2>
+                        <p>Duration: 00:00:14</p>
+                    </article>
+                    <article class="playback" data-videolink="videos/sample-video5.mp4" data-videoid="5">
+                        <i class="fab fa-youtube fa-2x"></i>
+                        <h2>Sample Video 5.</h2>
+                        <p>Duration: 00:01:03</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+    </div>
+</body>
